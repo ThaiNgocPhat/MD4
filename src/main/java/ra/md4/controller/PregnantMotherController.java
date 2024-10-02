@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.md4.models.Product;
 import ra.md4.service.product.IProductService;
-import ra.md4.service.sales.ISalesService;
+
 
 import java.util.List;
 
@@ -16,15 +16,12 @@ import java.util.List;
 public class PregnantMotherController {
 
     @Autowired
-    private ISalesService iSalesService;
-
-    @Autowired
     private IProductService iProductService;
 
     @GetMapping
     public String babyBoy(Model model){
         int id = 5;
-        List<Product> products = iSalesService.findByCategoryId(id);
+        List<Product> products = iProductService.findByCategoryId(id);
         model.addAttribute("products", products);
         return "layout/pregnant-mother/pregnant-mother";
     }

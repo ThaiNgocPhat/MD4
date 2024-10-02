@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.md4.models.Product;
 import ra.md4.service.product.IProductService;
-import ra.md4.service.sales.ISalesService;
 
 import java.util.List;
 
@@ -15,8 +14,6 @@ import java.util.List;
 @RequestMapping("/accessories")
 public class AccessoriesController {
 
-    @Autowired
-    private ISalesService iSalesService;
 
     @Autowired
     private IProductService iProductService;
@@ -24,7 +21,7 @@ public class AccessoriesController {
     @GetMapping
     public String accessories(Model model){
         int id = 6;
-        List<Product> products = iSalesService.findByCategoryId(id);
+        List<Product> products = iProductService.findByCategoryId(id);
         model.addAttribute("products", products);
         return "layout/accessories/accessories";
     }

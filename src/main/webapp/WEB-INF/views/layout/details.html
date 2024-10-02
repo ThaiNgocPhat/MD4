@@ -92,6 +92,7 @@
                 <button class="btn-add-cart" type="submit">Thêm vào giỏ hàng</button>
             </form>
 
+
             <form th:action="@{/favorites/add}" method="post">
                 <input type="hidden" name="productId" th:value="${product.id}" />
                 <button class="btn-add-favorites" type="submit">Thêm vào yêu thích</button>

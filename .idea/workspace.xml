@@ -5,118 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd8f01c-05ae-413e-be8f-afebd75ae9a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/config/AuthInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/config/DispatcherConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/config/HibernateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/config/MVCConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AccessoriesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyBoyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyGirlController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/DetailsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/NewBornController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/PregnantMotherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/SalesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/IGenericDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/admin/AdminDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/admin/IAdminDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/cart/CartDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/cart/ICartDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/category/CategoryDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/category/ICategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/product/IProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/product/ProductDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/sales/ISalesDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/sales/SalesDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/user/IUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/user/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dto/req/FormLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dto/req/FormRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dto/res/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/exception/AuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/WishList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/IService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/admin/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/admin/IAdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/cart/CartServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/cart/ICartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/product/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/product/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/sales/ISalesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/sales/SalesServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/user/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/user/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/utils/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/cart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/details.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/product.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/wishlist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/order/order.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/product/editProduct.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/product/newProduct.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/product/product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/editUser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/auth/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/auth/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-backpacks.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-caps.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sandals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-socks.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-boy/baby-boy-jackets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-boy/baby-boy-pants.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-boy/baby-boy-shirts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-boy/baby-boy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-jackets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-pants.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-shirts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/best-sales.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-bodysuit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-set.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-dresses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-pants.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-shirts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/wishlist/wishlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/IShoppingCartDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/ShoppingCartDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/IShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping_cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AccessoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AccessoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyGirlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyGirlController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/PregnantMotherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/PregnantMotherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/SalesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/admin/AdminDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/admin/AdminDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/cart/CartDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/cart/ICartDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/category/CategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/category/CategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/product/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/product/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/sales/ISalesDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/sales/SalesDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/models/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/models/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/cart/CartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/cart/ICartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/sales/ISalesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/sales/SalesServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,10 +48,10 @@
       <list>
         <option value="JavaScript File" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -161,30 +76,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.Build MD4.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.93.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.Build MD4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.93.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories" />
@@ -300,6 +215,7 @@
       <updated>1727428488838</updated>
       <workItem from="1727428489847" duration="52540000" />
       <workItem from="1727689039764" duration="36722000" />
+      <workItem from="1727836060136" duration="4059000" />
     </task>
     <servers />
   </component>

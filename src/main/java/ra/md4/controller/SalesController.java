@@ -5,10 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import ra.md4.dao.sales.ISalesDao;
 import ra.md4.models.Product;
-import ra.md4.service.sales.ISalesService;
+import ra.md4.service.product.IProductService;
+
 
 import java.util.List;
 
@@ -16,12 +15,12 @@ import java.util.List;
 @RequestMapping("/sales")
 public class SalesController {
     @Autowired
-    private ISalesService iSalesService;
+    private IProductService iProductService;
 
     @GetMapping
     public String sales( Model model) {
         int id = 1;
-        List<Product> products = iSalesService.findByCategoryId(id);
+        List<Product> products = iProductService.findByCategoryId(id);
         model.addAttribute("products", products);
         return "layout/best-sales";
     }
