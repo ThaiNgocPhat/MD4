@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Yêu Thích</title>
+    <link rel="stylesheet" th:href="@{/css/wishlist.css}">
+    <link rel="import" th:href="@{../header.html}">
+    <link rel="import" th:href="@{../footer.html}">
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="content-title">
+    <h3>Danh Sách Yêu Thích Của Bạn</h3>
+</div>
+
+<div id="wishlist">
+    <div class="wishlist-content">
+        <div class="wishlist-item" th:each="product : ${wishlist}">
+            <img th:src="${product.image}" class="boy-items" alt="Product Image" />
+            <div class="item-details">
+                <h2 th:text="${product.name}">Tên sản phẩm</h2>
+                <p th:text="${product.description}">Mô tả sản phẩm</p>
+                <p>Giá: <span th:text="${product.unitPrice}">0.00đ</span></p>
+                <button class="remove-btn" th:onclick="'removeFromWishlist(' + ${product.id} + ')'">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

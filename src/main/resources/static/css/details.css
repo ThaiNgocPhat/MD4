@@ -1,0 +1,121 @@
+
+
+#product-details {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    font-size: 2.5em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.product-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.product-photo {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+
+.product-photo img {
+    max-width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-information {
+    flex: 1;
+    max-width: 45%;
+    padding: 20px;
+}
+
+.discounted-price {
+    font-size: 1.8em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.standard-price {
+    font-size: 1.4em;
+    text-decoration: line-through;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.quantity-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity-selection button {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.quantity-selection button:hover {
+    background-color: #2980b9;
+}
+
+.quantity-selection input {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-add-cart, .btn-add-favorites {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-add-cart:hover, .btn-add-favorites:hover {
+    background-color: #2ecc71;
+}
+
+.btn-add-favorites {
+    background-color: #e74c3c;
+}
+
+.btn-add-favorites:hover {
+    background-color: #c0392b;
+}

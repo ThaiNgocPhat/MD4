@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}" />
+</head>
+<body>
+<div id="dashboard">
+
+    <div class="nav">
+        <ul>
+            <li><a href="/admin/products" onclick="loadContent('/admin/products', event)">Sản phẩm</a></li>
+            <li><a href="/admin/users" onclick="loadContent('/admin/users', event)">Người dùng</a></li>
+            <li><a href="/admin/orders" onclick="loadContent('/admin/orders', event)">Đơn hàng</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Phần nội dung động sẽ được tải vào đây -->
+    <div class="content">
+        <h2>Chào mừng đến với Dashboard</h2>
+        <p>Chọn một mục ở bên trái để xem thông tin chi tiết.</p>
+    </div>
+</div>
+<script th:src="@{/static/js/dashboard.js}"></script>
+</body>
+</html>

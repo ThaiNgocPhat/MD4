@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" th:href="@{/css/details.css}">-->
+<!--    <title>Chi tiết sản phẩm</title>-->
+<!--    <link rel="import" th:href="@{../../header.html}">-->
+<!--    <link rel="import" th:href="@{../../footer.html}">-->
+<!--    <link rel="stylesheet" th:href="@{/css/header.css}" />-->
+<!--    <link rel="stylesheet" th:href="@{/css/footer.css}" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:replace="header :: header"></div>-->
+
+<!--<div id="product-details">-->
+<!--    <h1 class="product-name" th:text="${product.name}">Tên sản phẩm</h1>-->
+<!--    <div class="product-info-container">-->
+<!--        <div class="product-photo">-->
+<!--            <img th:src="${product.image}" alt="Product Image" />-->
+<!--        </div>-->
+<!--        <div class="product-information">-->
+<!--            <p class="discounted-price" th:text="${product.formattedDiscountedPrice}">Giá sau khi giảm</p>-->
+<!--            <p class="standard-price" th:text="${product.formattedUnitPrice}">Giá sản phẩm</p>-->
+<!--            <p class="product-description" th:text="${product.description}">Mô tả sản phẩm</p>-->
+
+<!--            <div class="quantity-selection">-->
+<!--                <button onclick="decreaseQuantity()">-</button>-->
+<!--                <input type="text" id="quantity" value="1">-->
+<!--                <button onclick="increaseQuantity()">+</button>-->
+<!--            </div>-->
+
+<!--            <button class="btn-add-cart" >Thêm vào giỏ hàng</button>-->
+<!--            <button class="btn-add-favorites" th:onclick="'addToFavorites(' + ${product.id} + ')'">Thêm vào yêu thích</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div th:replace="footer :: footer"></div>-->
+
+<!--<script>-->
+<!--    function increaseQuantity() {-->
+<!--        let quantity = document.getElementById('quantity');-->
+<!--        quantity.value = parseInt(quantity.value) + 1;-->
+<!--    }-->
+
+<!--    function decreaseQuantity() {-->
+<!--        let quantity = document.getElementById('quantity');-->
+<!--        if (parseInt(quantity.value) > 1) {-->
+<!--            quantity.value = parseInt(quantity.value) - 1;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/details.css}">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="import" th:href="@{../../header.html}">
+    <link rel="import" th:href="@{../../footer.html}">
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+</head>
+<body>
+<div th:replace="header :: header"></div>
+
+<div id="product-details">
+    <h1 class="product-name" th:text="${product.name}">Tên sản phẩm</h1>
+    <div class="product-info-container">
+        <div class="product-photo">
+            <img th:src="${product.image}" alt="Product Image" />
+        </div>
+        <div class="product-information">
+            <p class="discounted-price" th:text="${product.formattedDiscountedPrice}">Giá sau khi giảm</p>
+            <p class="standard-price" th:text="${product.formattedUnitPrice}">Giá sản phẩm</p>
+            <p class="product-description" th:text="${product.description}">Mô tả sản phẩm</p>
+
+            <form th:action="@{/cart/add}" method="post">
+                <div class="quantity-selection">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required />
+                </div>
+
+                <input type="hidden" name="productId" th:value="${product.id}" />
+                <button class="btn-add-cart" type="submit">Thêm vào giỏ hàng</button>
+            </form>
+
+            <form th:action="@{/favorites/add}" method="post">
+                <input type="hidden" name="productId" th:value="${product.id}" />
+                <button class="btn-add-favorites" type="submit">Thêm vào yêu thích</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="footer :: footer"></div>
+
+</body>
+</html>

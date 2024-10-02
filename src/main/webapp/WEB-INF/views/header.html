@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+
+    <title>Trang chủ</title>
+</head>
+<body>
+<header id="header" class="header">
+    <div class="header-container">
+        <div class="header-contact">
+            <p>Hotline <strong>038 8892 447</strong></p>
+        </div>
+        <div class="shipping-purchase">
+            <p>Miễn phí ship toàn quốc với đơn hàng trên 1 triệu</p>
+        </div>
+        <div class="user-items">
+            <ul class="user-details">
+                <li>
+                    <a th:href="@{/login}" class="login-link">
+                        <i class="fa fa-user"></i> Đăng nhập/ đăng ký
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/cart}" class="cart-link">
+                        <i class="fa fa-shopping-cart"></i> Giỏ hàng
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/wishlist}" class="wishlist-link">
+                        <i class="fa fa-heart"></i> Yêu thích
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="main-logo">
+            <a th:href="@{/}"><p>Cửa hàng Mẹ và Bé</p></a>
+        </div>
+        <div class="navbar">
+            <div id="main-nav" class="stellarnav">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a th:href="@{/}" class="item-anchor active">Trang chủ<i class="icon icon-chevron-down"></i></a>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/baby-newborn}" class="item-anchor">Quần áo trẻ sơ sinh<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/baby-newborn/set}">Quần áo theo bộ</a></li>
+                            <li><a th:href="@{/baby-newborn/bodysuit}">Bodysuit dạng pack</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/baby-boy}" class="item-anchor">Quần áo bé trai<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/baby-boy/shirts}">Áo</a></li>
+                            <li><a th:href="@{/baby-boy/pants}">Quần</a></li>
+                            <li><a th:href="@{/baby-boy/jackets}">Áo khoác</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/baby-girl}" class="item-anchor">Quần áo bé gái<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/baby-girl/shirts}">Áo</a></li>
+                            <li><a th:href="@{/baby-girl/pants}">Quần</a></li>
+                            <li><a th:href="@{/baby-girl/jackets}">Áo khoác</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/pregnant-mother}" class="item-anchor">Mẹ bầu<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/pregnant-mother/shirts}">Áo bầu</a></li>
+                            <li><a th:href="@{/pregnant-mother/pants}">Quần bầu</a></li>
+                            <li><a th:href="@{/pregnant-mother/dresses}">Đầm bầu</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/accessories}" class="item-anchor">Giày và Phụ kiện<i class="icon icon-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/accessories/sandals}">Giầy sandal</a></li>
+                            <li><a th:href="@{/accessories/sports-shoes}">Giầy thể thao</a></li>
+                            <li><a th:href="@{/accessories/socks}">Vớ</a></li>
+                            <li><a th:href="@{/accessories/caps}">Nón</a></li>
+                            <li><a th:href="@{/accessories/backpacks}">Ba lô</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a th:href="@{/contact}" class="item-anchor">Liên hệ<i class="icon icon-chevron-down"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+</body>
+</html>

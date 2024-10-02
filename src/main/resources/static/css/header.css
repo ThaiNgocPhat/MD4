@@ -1,0 +1,123 @@
+
+.header {
+    background-color: #f8f8f8;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-contact p,
+.shipping-purchase p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.user-items {
+    display: flex;
+    align-items: center;
+}
+
+.user-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.user-details li {
+    margin-left: 15px;
+}
+
+.user-details a {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: baseline !important;
+    margin-top: 30px;
+}
+
+.main-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main-logo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.main-logo a:hover {
+    color: #ff6600;
+}
+
+.navbar {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.item-anchor {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+}
+
+.item-anchor:hover {
+    background-color: #f0f0f0;
+    color: #007BFF;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    white-space: nowrap;
+}
+
+.submenu li a {
+    padding: 8px 12px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #f0f0f0;
+}

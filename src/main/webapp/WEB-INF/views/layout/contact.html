@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" th:href="@{/css/contact.css}">
+    <link rel="import" th:href="@{../header.html}">
+    <link rel="import" th:href="@{../footer.html}">
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="content-title">
+    <h3>Về phía chúng tôi</h3>
+    <h1>Bạn có thể đặt câu hỏi với chúng tôi</h1>
+    <p>Hãy liên hệ với chúng tôi nếu có câu hỏi và ý kiến, hoặc bạn có thể giải quyết vấn đề<br />
+        của mình bằng cách liên hệ trực tiếp với văn phòng của chúng tôi.</p>
+</div>
+
+<div id="contact">
+    <div class="contact-content">
+        <div class="left-content">
+            <div class="our-offices">
+                <div class="office hcm">
+                    <h2>Văn phòng Hồ Chí Minh</h2>
+                    <p>Tân Kiên, Bình Chánh, Thành phố Hồ Chí Minh</p>
+                    <p>SĐT: 090-123-4567</p>
+                    <p>Email: ngocphat@hcmc.com</p>
+                </div>
+                <div class="office hn">
+                    <h2>Văn phòng Hà Nội</h2>
+                    <p>123 Trần Duy Hưng, Hà Nội</p>
+                    <p>Phone: 098-789-0123</p>
+                    <p>Email: ngocphat@hn.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-contact">
+            <h2>Liên hệ với chúng tôi</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required/>
+                <input type="email" name="email" placeholder="Your Email" required/>
+                <input type="text" name="subject" placeholder="Subject" required/>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

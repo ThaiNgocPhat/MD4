@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quần cho bé trai</title>
+    <link rel="import" th:href="@{../../header.html}">
+    <link rel="import" th:href="@{../../footer.html}">
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+    <link rel="stylesheet" th:href="@{/css/footer.css}" />
+    <link rel="stylesheet" th:href="@{/css/items.css}">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+
+<h1>Quần cho bé trai</h1>
+<div class="clothes-item">
+    <div th:each="product : ${products}" class="clothes-items">
+        <img th:src="${product.image}" class="clothes-img" alt="Product Image" />
+        <div class="sales-caption">
+            <h5 th:text="${product.name}">Tên sản phẩm</h5>
+            <p th:text="${product.unitPrice}">Giá sản phẩm</p>
+            <span th:text="${product.discounted}">Giá sau khi giảm</span>
+        </div>
+    </div>
+</div>
+
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

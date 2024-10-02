@@ -1,0 +1,67 @@
+/* Đặt nền và căn chỉnh cho toàn bộ footer */
+#footer {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Kiểu cho phần thông tin liên hệ */
+.contact, .about-us {
+    width: 30%;
+}
+
+.contact h3, .about-us h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact p, .about-us ul {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.about-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-us ul li {
+    margin-bottom: 5px;
+}
+
+.form {
+    margin-top: 10px;
+}
+
+.form input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .contact, .about-us {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form input[type="text"] {
+        width: 60%;
+    }
+}
