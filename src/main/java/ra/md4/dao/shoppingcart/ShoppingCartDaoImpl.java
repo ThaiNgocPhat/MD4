@@ -48,4 +48,19 @@ public class ShoppingCartDaoImpl implements IShoppingCartDao {
             entityManager.remove(shoppingCart);
         }
     }
+
+    @Override
+    public double calculateTotal(List<ShoppingCart> shoppingCarts) {
+        return shoppingCarts.stream()
+                .mapToDouble(cart -> cart.getQuantity() * cart.getProduct().getUnitPrice())
+                .sum();
+    }
+
+    @Override
+    public double calculateTotalAmount(List<ShoppingCart> shoppingCarts) {
+        return shoppingCarts.stream()
+                .mapToDouble(cart -> cart.getQuantity() * cart.getProduct().getUnitPrice())
+                .sum();
+    }
+
 }

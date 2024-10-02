@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.md4.models.Product;
 import ra.md4.service.product.IProductService;
-import ra.md4.service.sales.ISalesService;
 
 import java.util.List;
 

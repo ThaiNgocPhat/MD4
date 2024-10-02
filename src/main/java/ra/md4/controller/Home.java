@@ -17,7 +17,13 @@ public class Home {
     @Autowired
     private IProductService iProductService;
     @GetMapping
-    public String home() {
+    public String home(Model model) {
+        int id = 1;
+        List<Product> sellerProduct = iProductService.findByCategoryId(id);
+        if (sellerProduct.size() > 5){
+            sellerProduct = sellerProduct.stream().limit(5).collect(Collectors.toList());
+        }
+        model.addAttribute("sellerProduct", sellerProduct);
         return "layout/home";
     }
 

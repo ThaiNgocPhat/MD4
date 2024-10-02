@@ -35,4 +35,14 @@ public class ShoppingCartServiceImpl implements IShoppingCartService{
     public void delete(Integer id) {
         iShoppingCartDao.delete(id);
     }
+
+    @Override
+    public double calculateTotal(List<ShoppingCart> shoppingCarts) {
+        return iShoppingCartDao.calculateTotal(shoppingCarts);
+    }
+
+    @Override
+    public double calculateTotalAmount(List<ShoppingCart> shoppingCarts) {
+        return iShoppingCartDao.calculateTotalAmount(shoppingCarts);
+    }
 }

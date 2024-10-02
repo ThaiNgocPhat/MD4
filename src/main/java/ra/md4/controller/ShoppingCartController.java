@@ -3,10 +3,7 @@ package ra.md4.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ra.md4.dto.res.UserInfo;
 import ra.md4.models.Product;
 import ra.md4.models.ShoppingCart;
@@ -49,7 +46,35 @@ public class ShoppingCartController {
     @GetMapping
     public String cartPage(Model model){
         List<ShoppingCart> shoppingCarts = iShoppingCartService.getAll();
+        double totalAmount = shoppingCarts.stream()
+                        .mapToDouble(c -> c.getQuantity() * c.getProduct().getUnitPrice()).sum();
+        model.addAttribute("totalAmount", totalAmount);
         model.addAttribute("shoppingCarts", shoppingCarts);
+        return "layout/shopping_cart";
+    }
+
+    @PostMapping("/update")
+    public String updateCart(@RequestParam("cartId") Integer cartId, @RequestParam("quantity") Integer quantity) {
+        ShoppingCart shoppingCart = iShoppingCartService.findById(cartId);
+        if (shoppingCart != null) {
+            shoppingCart.setQuantity(quantity);
+            iShoppingCartService.update(shoppingCart);
+        }
+        return "redirect:/cart";
+    }
+
+    @PostMapping("/delete")
+    public String deleteCart(@RequestParam("cartId") Integer cartId) {
+        iShoppingCartService.delete(cartId);
+        return "redirect:/cart";
+    }
+
+    @GetMapping("/cart")
+    public String viewCart(Model model) {
+        List<ShoppingCart> shoppingCarts = iShoppingCartService.getAll();
+        double totalAmount = iShoppingCartService.calculateTotalAmount(shoppingCarts);
+        model.addAttribute("shoppingCarts", shoppingCarts);
+        model.addAttribute("totalAmount", totalAmount);
         return "layout/shopping_cart";
     }
 }

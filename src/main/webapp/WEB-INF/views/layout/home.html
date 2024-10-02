@@ -37,44 +37,10 @@
         <h1 class="my-4">Best Seller</h1>
     </div>
     <div class="best-sales">
-        <div class="card" style="width: 18rem;">
-            <img th:src="@{/image/ra321_1_1_1.jpg}" class="d-block w-100" alt="Ảnh khuyến mãi cho trẻ em">
+        <div th:each="product : ${sellerProduct}" class="card" style="width: 18rem;">
+            <img th:src="${product.image}" class="clothes-img" alt="Product Image" />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img th:src="@{/image/a1369_1_1_2.jpg}" class="d-block w-100" alt="Ảnh khuyến mãi cho trẻ em">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img th:src="@{/image/ra285_1_1_1.jpg}" class="d-block w-100" alt="Ảnh khuyến mãi cho trẻ em">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img th:src="@{/image/m8453_1_1_1.jpg}" class="d-block w-100" alt="Ảnh khuyến mãi cho trẻ em">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img th:src="@{/image/ra286_1_1_1.jpg}" class="d-block w-100" alt="Ảnh khuyến mãi cho trẻ em">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title" th:text="${product.name}">Tên sản phẩm</h5>
             </div>
         </div>
     </div>

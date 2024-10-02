@@ -65,7 +65,7 @@ public class Product {
 
     public String formatCurrency(double amount) {
         NumberFormat formatter = NumberFormat.getInstance(new Locale("vi", "VN"));
-        return formatter.format(amount) + "₫";  // Thêm ký hiệu VND
+        return formatter.format(amount) + "₫";
     }
 
     public String getFormattedUnitPrice() {

@@ -15,15 +15,19 @@
 <h1>Quần cho bé trai</h1>
 <div class="clothes-item">
     <div th:each="product : ${products}" class="clothes-items">
-        <img th:src="${product.image}" class="clothes-img" alt="Product Image" />
-        <div class="sales-caption">
-            <h5 th:text="${product.name}">Tên sản phẩm</h5>
-            <p th:text="${product.unitPrice}">Giá sản phẩm</p>
-            <span th:text="${product.discounted}">Giá sau khi giảm</span>
-        </div>
+        <a th:href="@{/product/details/{id}(id=${product.id})}" style="text-decoration: none; color: inherit;">
+            <img th:src="${product.image}" class="clothes-img" alt="Product Image" />
+            <div class="sales-caption">
+                <h5 th:text="${product.name}">Tên sản phẩm</h5>
+                <div class="price-container">
+                    <p th:text="'Giảm giá: ' + ${product.discount} + '%'" class="discount">Giảm giá</p>
+                    <p th:text="${product.formattedUnitPrice}" class="original-price">Giá sản phẩm</p>
+                    <span th:text="${product.formattedDiscountedPrice}" class="discounted-price">Giá sau khi giảm</span>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
-
 <div th:replace="footer :: footer"></div>
 </body>
 </html>
