@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận Đơn Hàng</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .summary {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div class="container">
+    <h1>Xác Nhận Đơn Hàng</h1>
+    <div class="summary">
+        <p>Cảm ơn bạn đã đặt hàng!</p>
+        <p>Mã đơn hàng của bạn là: <strong th:text="${order.id}"></strong></p> <!-- Changed to order.id -->
+    </div>
+    <h2>Thông Tin Nhận Hàng</h2>
+    <table>
+        <tbody>
+        <tr>
+            <th>Người Nhận</th>
+            <td th:text="${order.receiveName}"></td>
+        </tr>
+        <tr>
+            <th>Địa Chỉ</th>
+            <td th:text="${order.receiveAddress}"></td>
+        </tr>
+        <tr>
+            <th>Số Điện Thoại</th>
+            <td th:text="${order.receivePhone}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Chi Tiết Đơn Hàng</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Tên Sản Phẩm</th>
+            <th>Số Lượng</th>
+            <th>Đơn Giá</th>
+            <th>Tổng Giá</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${order.items}">
+            <td th:text="${item.productName}"></td>
+            <td th:text="${item.quantity}"></td>
+            <td th:text="${#numbers.formatCurrency(item.unitPrice, 'VND')}"></td>
+            <td th:text="${#numbers.formatCurrency(item.totalPrice, 'VND')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

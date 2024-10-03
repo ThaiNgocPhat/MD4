@@ -8,4 +8,6 @@ import java.util.List;
 public interface IShoppingCartDao extends IGenericDao<ShoppingCart, Integer> {
     double calculateTotal(List<ShoppingCart> shoppingCarts);
     double calculateTotalAmount(List<ShoppingCart> shoppingCarts);
+    ShoppingCart findByUserAndProduct(Integer userId, Integer productId);
+
 }

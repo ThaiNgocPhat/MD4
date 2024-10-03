@@ -12,4 +12,5 @@ public interface IUserService extends IService<User, Integer> {
     UserInfo login(FormLogin request);
     void register(FormRegister request);
     User findByUsername(String username);
+
 }

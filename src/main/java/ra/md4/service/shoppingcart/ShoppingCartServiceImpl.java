@@ -45,4 +45,9 @@ public class ShoppingCartServiceImpl implements IShoppingCartService{
     public double calculateTotalAmount(List<ShoppingCart> shoppingCarts) {
         return iShoppingCartDao.calculateTotalAmount(shoppingCarts);
     }
+
+    @Override
+    public ShoppingCart findByUserAndProduct(Integer userId, Integer productId) {
+        return iShoppingCartDao.findByUserAndProduct(userId, productId);
+    }
 }

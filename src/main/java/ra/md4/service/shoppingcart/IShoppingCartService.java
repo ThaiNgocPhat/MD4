@@ -8,4 +8,6 @@ import java.util.List;
 public interface IShoppingCartService extends IService<ShoppingCart, Integer> {
     double calculateTotal(List<ShoppingCart> shoppingCarts);
     double calculateTotalAmount(List<ShoppingCart> shoppingCarts);
+    ShoppingCart findByUserAndProduct(Integer userId, Integer productId);
+
 }

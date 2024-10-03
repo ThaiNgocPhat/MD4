@@ -19,7 +19,12 @@
         </div>
         <div class="user-items">
             <ul class="user-details">
-                <li>
+                <li th:if="${session.userLogin != null}">
+            <span>
+                <i class="fa fa-user"></i> Xin chào, <strong th:text="${session.userLogin.username}"></strong>
+            </span>
+                </li>
+                <li th:if="${session.userLogin == null}">
                     <a th:href="@{/login}" class="login-link">
                         <i class="fa fa-user"></i> Đăng nhập/ đăng ký
                     </a>
@@ -34,8 +39,19 @@
                         <i class="fa fa-heart"></i> Yêu thích
                     </a>
                 </li>
+                <li th:if="${session.userLogin != null}">
+                    <a th:href="@{/cart/checkout}" class="history-link">
+                        <i class="fa fa-history"></i> Lịch sử đơn hàng
+                    </a>
+                </li>
+                <li th:if="${session.userLogin != null}">
+                    <a th:href="@{/logout}" class="logout-link">
+                        <i class="fa fa-sign-out"></i> Đăng xuất
+                    </a>
+                </li>
             </ul>
         </div>
+
     </div>
     <div class="nav">
         <div class="main-logo">

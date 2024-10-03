@@ -5,36 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd8f01c-05ae-413e-be8f-afebd75ae9a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/order/IOrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/order/OrderDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/order/IOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/order/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/shopping.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping/shopping_cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyBoyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/BabyBoyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/NewBornController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/NewBornController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/controller/ShoppingCartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/IShoppingCartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/IShoppingCartDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/ShoppingCartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dao/shoppingcart/ShoppingCartDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/dto/res/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/dto/res/UserInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/IShoppingCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/IShoppingCartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/ShoppingCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/shoppingcart/ShoppingCartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/cart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-backpacks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-backpacks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-caps.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-caps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sandals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sandals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-socks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-socks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sports.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories-sports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories/accessories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-jackets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-jackets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-pants.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-pants.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-shirts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl-shirts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl/baby-girl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ra/md4/service/user/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ra/md4/service/user/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/cart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/best-sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/best-sales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/cart.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-bodysuit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-bodysuit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-set.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born-set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/new-born/new-born.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-dresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-dresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-pants.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-pants.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-shirts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother-shirts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/pregnant-mother/pregnant-mother.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping_cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping_cart.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +101,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/shopping" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/accessories" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-girl" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/baby-boy" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -218,7 +214,8 @@
       <updated>1727428488838</updated>
       <workItem from="1727428489847" duration="52540000" />
       <workItem from="1727689039764" duration="36722000" />
-      <workItem from="1727836060136" duration="8211000" />
+      <workItem from="1727836060136" duration="8341000" />
+      <workItem from="1727927746368" duration="16091000" />
     </task>
     <servers />
   </component>

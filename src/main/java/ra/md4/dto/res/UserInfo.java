@@ -27,7 +27,8 @@ public class UserInfo {
 
     public static UserInfo builder(User user){
         UserInfo userInfo = new UserInfo();
-        userInfo.setUserId(userInfo.getUserId());
+        userInfo.setUserId(user.getId());
         return userInfo;
     }
+
 }

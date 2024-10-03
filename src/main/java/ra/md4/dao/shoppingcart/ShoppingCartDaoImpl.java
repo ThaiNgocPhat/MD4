@@ -63,4 +63,12 @@ public class ShoppingCartDaoImpl implements IShoppingCartDao {
                 .sum();
     }
 
+    @Override
+    public ShoppingCart findByUserAndProduct(Integer userId, Integer productId) {
+        TypedQuery<ShoppingCart> query = entityManager.createQuery("SELECT sc FROM ShoppingCart sc WHERE sc.user.id = :userId AND sc.product.id = :productId", ShoppingCart.class);
+        query.setParameter("userId", userId);
+        query.setParameter("productId", productId);
+        return query.getResultList().stream().findFirst().orElse(null);
+    }
+
 }
