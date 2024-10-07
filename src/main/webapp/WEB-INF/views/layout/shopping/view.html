@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="path/to/your/styles.css"> <!-- Thêm link tới file CSS của bạn -->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            background-color: #4CAF50; /* Xanh lá */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Màu xanh đậm hơn khi hover */
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Giỏ Hàng</h1>
+<table>
+    <tr>
+        <th>Sản Phẩm</th>
+        <th>Số Lượng</th>
+        <th>Giá</th>
+        <th>Thao Tác</th>
+    </tr>
+    <tr th:each="item : ${cart.items}">
+        <td th:text="${item.product.name}"></td>
+        <td>
+            <form th:action="@{/cart/update}" method="post">
+                <input type="hidden" name="userId" th:value="${cart.user.id}"/>
+                <input type="hidden" name="productId" th:value="${item.product.id}"/>
+                <input type="number" name="quantity" th:value="${item.quantity}" min="1"/>
+                <button type="submit">Cập Nhật</button>
+            </form>
+        </td>
+        <td th:text="${item.totalPrice}"></td>
+        <td>
+            <form th:action="@{/cart/remove}" method="post">
+                <input type="hidden" name="userId" th:value="${cart.user.id}"/>
+                <input type="hidden" name="productId" th:value="${item.product.id}"/>
+                <button type="submit">Xóa</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<h2>Tổng Giá: <span th:text="${cart.totalPrice}"></span></h2>
+
+<h3>Thông Tin Giao Hàng</h3>
+<form th:action="@{/cart/checkout}" method="post">
+    <input type="hidden" name="userId" th:value="${cart.user.id}"/>
+
+    <div>
+        <label>Họ Tên:</label>
+        <input type="text" name="fullName" th:value="${user.fullName}" required/>
+    </div>
+    <div>
+        <label>Địa Chỉ:</label>
+        <input type="text" name="address" th:value="${user.address}" required/>
+    </div>
+    <div>
+        <label>Số Điện Thoại:</label>
+        <input type="tel" name="phone" th:value="${user.phone}" required/>
+    </div>
+
+    <button type="submit">Thanh Toán</button>
+</form>
+</body>
+</html>

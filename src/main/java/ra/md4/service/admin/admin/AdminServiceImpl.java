@@ -1,14 +1,16 @@
-package ra.md4.service.admin;
+package ra.md4.service.admin.admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ra.md4.dao.admin.IAdminDao;
 import ra.md4.models.Product;
 import ra.md4.models.User;
+
 import java.util.List;
 
 
 @Service
-public class AdminServiceImpl implements IAdminService{
+public class AdminServiceImpl implements IAdminService {
     @Autowired
     private IAdminDao iAdminDao;
 
@@ -17,11 +19,13 @@ public class AdminServiceImpl implements IAdminService{
         return iAdminDao.searchName(name);
     }
 
+    @Transactional
     @Override
-    public void updateUserStatus(Integer id, Boolean status) {
-        iAdminDao.updateUserStatus(id, status);
+    public void updateUserStatus(Integer id) {
+        iAdminDao.updateUserStatus(id);
     }
 
+    @Transactional
     @Override
     public void changeUserRole(Integer id, Boolean role) {
         iAdminDao.changeUserRole(id, role);

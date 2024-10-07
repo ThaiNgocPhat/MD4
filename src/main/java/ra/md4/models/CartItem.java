@@ -13,21 +13,29 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order_items")
-public class OrderItem {
+@Table(name = "cart_items")
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
+    @JoinColumn(name = "shopping_cart_id", nullable = false)
+    private ShoppingCart shoppingCart;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
 
-    private String productName;
+
     private Integer quantity;
-    private BigDecimal unitPrice;
 
     public BigDecimal getTotalPrice() {
-        return unitPrice.multiply(new BigDecimal(quantity));
+        BigDecimal unitPrice = BigDecimal.valueOf(product.getUnitPrice());
+        return unitPrice.multiply(BigDecimal.valueOf(quantity));
     }
 }

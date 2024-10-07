@@ -69,17 +69,20 @@ public class AuthController {
 
     @PostMapping("/register")
     public String handleRegister(@ModelAttribute FormRegister request){
-        try{
-            userService.register(request);
-            return "auth/login";
-        }catch (Exception e) {
-            return "redirect:/error?message="+e.getMessage();
-        }
+        userService.register(request);
+        return "redirect:/login";
     }
     @PostMapping("/login")
     public String handleLogin(@ModelAttribute FormLogin request, HttpSession session, Model model, HttpServletResponse response) {
         try {
             UserInfo userInfo = userService.login(request);
+
+            // Kiểm tra trạng thái hoạt động của người dùng
+            if (!userInfo.isStatus()) { // Nếu trạng thái không hoạt động
+                model.addAttribute("error", "Tài khoản của bạn không hoạt động.");
+                return "auth/login"; // Trả về trang đăng nhập với thông báo lỗi
+            }
+
             session.setAttribute("userLogin", userInfo);
 
             // Thêm cookie để ghi nhớ đăng nhập
@@ -89,15 +92,16 @@ public class AuthController {
             response.addCookie(cookie);
 
             if (userInfo.isRole()) {
-                return "redirect:/admin";
+                return "redirect:/admin"; // Nếu là quản trị viên
             } else {
-                return "redirect:/";
+                return "redirect:/"; // Nếu là người dùng bình thường
             }
         } catch (AuthenticationException e) {
             model.addAttribute("error", e.getMessage());
-            return "auth/login";
+            return "auth/login"; // Trả về trang đăng nhập nếu có lỗi xác thực
         }
     }
+
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
@@ -107,8 +111,8 @@ public class AuthController {
         cookie.setPath("/"); // Đảm bảo cookie có thể xóa trên toàn bộ ứng dụng
         response.addCookie(cookie);
 
-        session.invalidate(); // Hủy session
-        return "redirect:/"; // Chuyển hướng về trang chủ
+        session.invalidate();
+        return "redirect:/";
     }
 
 }

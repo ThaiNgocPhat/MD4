@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IAdminDao {
     List<User> searchName(String name);
-    void updateUserStatus(Integer id, Boolean status);
+    void updateUserStatus(Integer id);
     void changeUserRole(Integer id, Boolean role);
     List<Product> searchProduct(String name);
 }

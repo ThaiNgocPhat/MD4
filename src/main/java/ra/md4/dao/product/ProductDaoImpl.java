@@ -380,15 +380,15 @@ public class ProductDaoImpl implements IProductDao {
     }
 
     @Override
-    public List<Product> getProductsByCategoryId(Integer categoryId) {
-        String query = "SELECT p FROM Product p WHERE p.category.id = :categoryId";
-        TypedQuery<Product> typedQuery = entityManager.createQuery(query, Product.class);
-        typedQuery.setParameter("categoryId", categoryId);
-        return typedQuery.getResultList();
+    public Product getById(Integer id) {
+        return entityManager.find(Product.class, id);
     }
 
     @Override
-    public Product getById(Integer id) {
-        return entityManager.find(Product.class, id);
+    public List<Product> findByCategoryId(int categoryId) {
+        String jpql = "SELECT p FROM Product p JOIN FETCH p.category c WHERE c.id = :categoryId AND c.status = true";
+        return entityManager.createQuery(jpql, Product.class)
+                .setParameter("categoryId", categoryId)
+                .getResultList();
     }
 }

@@ -12,7 +12,7 @@
 <body>
 <div th:replace="header :: header"></div>
 
-<h1>Quần cho bé trai</h1>
+<h1>Hàng giảm giá được ưa chuộng</h1>
 <div class="clothes-item">
     <div th:each="product : ${products}" class="clothes-items">
         <a th:href="@{/product/details/{id}(id=${product.id})}" style="text-decoration: none; color: inherit;">

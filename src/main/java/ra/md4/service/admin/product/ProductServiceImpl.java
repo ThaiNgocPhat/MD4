@@ -1,4 +1,4 @@
-package ra.md4.service.product;
+package ra.md4.service.admin.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,11 +69,6 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<Product> findByCategoryId(Integer categoryId) {
-        return iProductDao.getProductsByCategoryId(categoryId);
-    }
-
-    @Override
     public List<Product> getFiveProducts(List<Product> allProduct) {
         return iProductDao.getFiveProducts(allProduct);
     }
@@ -81,5 +76,10 @@ public class ProductServiceImpl implements IProductService{
     @Override
     public Product getById(Integer id) {
         return iProductDao.getById(id);
+    }
+
+    @Override
+    public List<Product> findByCategoryId (int categoryId){
+        return iProductDao.findByCategoryId(categoryId);
     }
 }

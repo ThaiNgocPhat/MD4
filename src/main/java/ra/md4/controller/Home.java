@@ -6,9 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.md4.models.Product;
-import ra.md4.service.product.IProductService;
+import ra.md4.service.admin.product.IProductService;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,11 +48,6 @@ public class Home {
         return "layout/home";
     }
 
-//    @GetMapping("/logout")
-//    public String handleLogout(HttpSession session) {
-//        session.removeAttribute("userLogin");
-//        return "redirect:/";
-//    }
 
     @GetMapping("/contact")
     public String contact(){

@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ra.md4.models.Product;
-import ra.md4.service.product.IProductService;
+import ra.md4.service.admin.product.IProductService;
 
 @Controller
 @RequestMapping("/product")

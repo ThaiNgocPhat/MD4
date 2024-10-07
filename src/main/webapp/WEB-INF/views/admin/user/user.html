@@ -4,13 +4,183 @@
     <meta charset="UTF-8">
     <title>Danh sách Người Dùng</title>
     <link rel="stylesheet" th:href="@{/css/user.css}" />
+    <style>
+        /* Định dạng chung cho body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Định dạng cho danh sách người dùng */
+        #usersInfo {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tiêu đề danh sách */
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Định dạng ô tìm kiếm */
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Bảng thông tin người dùng */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Đường viền bảng */
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        /* Định dạng ô bảng */
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Định dạng tiêu đề của bảng */
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Định dạng hàng chẵn */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hiệu ứng hover cho hàng */
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Định dạng hình ảnh đại diện */
+        img {
+            border-radius: 50%;
+        }
+
+        /* Định dạng cho các checkbox và select */
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        select {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        /* Định dạng cho liên kết quay lại */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* From Uiverse.io by WhiteNervosa */
+        .slider {
+            background-color: #ffffff2b;
+            border-radius: 100px;
+            padding: 1px;
+            margin: 10px;
+            cursor: pointer;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            align-items: center;
+            position: relative;
+            display: block;
+            width: 51px;
+            height: 29px;
+            box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+            #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+        }
+
+        .slider::after {
+            content: "";
+            display: flex;
+            top: 2.3px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: #e3e3e3;
+            border-radius: 200px;
+            position: absolute;
+            box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+            transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            will-change: left, background-color;
+        }
+
+        .switch input[type="checkbox"]:checked + .slider {
+            box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #22cc3f 0px 0px 0px 2px inset, #22cc3f 0px 0px 0px 24px inset,
+            rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+        }
+
+        .switch input[type="checkbox"]:checked + .slider::after {
+            left: 24px;
+        }
+
+        .switch input[type="checkbox"] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+<script>
+    function toggleStatus(id) {
+        location.href = "/admin/users/changeStatus/"+id
+    }
+</script>
 <div id="usersInfo">
     <h2>Danh sách Người Dùng</h2>
 
     <!-- Ô tìm kiếm -->
-    <form th:action="@{/admin/search}" method="get">
+    <form th:action="@{/admin/users/search}" method="get">
         <input type="text" name="name" placeholder="Tìm kiếm người dùng" />
         <button type="submit">Tìm kiếm</button>
     </form>
@@ -49,11 +219,11 @@
             <td th:text="${#dates.format(user.createdAt, 'dd-MM-yyyy')}"></td>
             <td th:text="${#dates.format(user.updatedAt, 'dd-MM-yyyy')}"></td>
             <td>
-                <form th:action="@{/admin/users/changeStatus}" method="post">
-                    <input type="hidden" name="id" th:value="${user.id}"/>
-                    <input type="checkbox" name="status" th:checked="${user.status}" value="true"
-                           onclick="this.form.submit(); this.form.status.value = this.checked;">
-                </form>
+                    <input type="hidden" name="status" value="" />
+                    <label class="switch">
+                        <input type="checkbox" name="status" th:checked="${user.status}" th:onchange="|toggleStatus(${user.id})|">
+                        <span class="slider"></span>
+                    </label>
             </td>
             <td>
                 <form th:action="@{/admin/users/changeRole}" method="post">
@@ -67,6 +237,7 @@
         </tr>
         </tbody>
     </table>
+    <a href="/admin/dashboard">Quay lại trang chủ</a>
 </div>
 </body>
 </html>

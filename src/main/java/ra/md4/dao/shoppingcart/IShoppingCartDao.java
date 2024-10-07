@@ -1,13 +1,14 @@
 package ra.md4.dao.shoppingcart;
 
 import ra.md4.dao.IGenericDao;
+import ra.md4.models.Order;
 import ra.md4.models.ShoppingCart;
 
-import java.util.List;
-
-public interface IShoppingCartDao extends IGenericDao<ShoppingCart, Integer> {
-    double calculateTotal(List<ShoppingCart> shoppingCarts);
-    double calculateTotalAmount(List<ShoppingCart> shoppingCarts);
-    ShoppingCart findByUserAndProduct(Integer userId, Integer productId);
+public interface IShoppingCartDao {
+    void addItemToCart(Integer userId, Integer productId, Integer quantity);
+    void updateItemInCart(Integer userId, Integer productId, Integer quantity);
+    void removeItemFromCart(Integer userId, Integer productId);
+    ShoppingCart getCartByUserId(Integer userId);
+    Order checkout(Integer id);
 
 }

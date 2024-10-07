@@ -29,12 +29,12 @@
                         <i class="fa fa-user"></i> Đăng nhập/ đăng ký
                     </a>
                 </li>
-                <li>
+                <li th:if="${session.userLogin != null}">
                     <a th:href="@{/cart}" class="cart-link">
                         <i class="fa fa-shopping-cart"></i> Giỏ hàng
                     </a>
                 </li>
-                <li>
+                <li th:if="${session.userLogin != null}">
                     <a th:href="@{/wishlist}" class="wishlist-link">
                         <i class="fa fa-heart"></i> Yêu thích
                     </a>

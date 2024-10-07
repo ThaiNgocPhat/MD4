@@ -1,4 +1,4 @@
-package ra.md4.service.order;
+package ra.md4.service.admin.order;
 
 import ra.md4.models.Order;
 import ra.md4.models.User;

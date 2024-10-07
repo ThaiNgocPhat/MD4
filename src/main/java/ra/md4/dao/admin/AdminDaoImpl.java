@@ -179,15 +179,17 @@ public class AdminDaoImpl implements IAdminDao {
         return q.getResultList();
     }
 
+
     @Override
-    public void updateUserStatus(Integer id, Boolean status) {
+    public void updateUserStatus(Integer id) {
         User user = entityManager.find(User.class, id);
         if (user != null) {
-            user.setStatus(status);
+            user.setStatus(!user.isStatus());
             entityManager.merge(user);
         }
     }
 
+    @Transactional
     @Override
     public void changeUserRole(Integer id, Boolean role) {
         User user = entityManager.find(User.class, id);

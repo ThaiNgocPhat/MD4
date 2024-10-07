@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Định dạng chung cho body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Tiêu đề */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Bảng */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        /* Đường viền bảng */
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        /* Định dạng ô bảng */
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Định dạng tiêu đề của bảng */
+        th {
+            background-color: #007BFF; /* Màu xanh dương cho tiêu đề */
+            color: white; /* Màu chữ trắng */
+        }
+
+        /* Định dạng hàng chẵn */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Hiệu ứng hover cho hàng */
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Liên kết chung */
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Nút thêm mới */
+        a.button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #28a745; /* Màu xanh lá */
+            color: white;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        a.button:hover {
+            background-color: #218838; /* Đậm hơn khi hover */
+        }
+
+        /* Nút xóa (nguy hiểm) */
+        a.danger {
+            color: red;
+        }
+
+        a.danger:hover {
+            color: darkred;
+        }
+
+        /* Liên kết quay lại */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #6c757d; /* Màu xám */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            background-color: #5a6268; /* Đậm hơn khi hover */
+        }
+
+        /* Hiệu ứng trạng thái */
+        td[th-text="${category.status ? 'Hoạt động' : 'Không hoạt động'}"] {
+            font-weight: bold;
+            color: #28a745; /* Màu xanh lá cho "Hoạt động" */
+        }
+
+        td[th-text="${category.status ? '' : 'Không hoạt động'}"] {
+            color: red; /* Màu đỏ cho "Không hoạt động" */
+        }
+
+        /* Định dạng chung cho input tìm kiếm */
+        input[type="text"] {
+            width: 200px; /* Độ rộng của ô input */
+            padding: 10px; /* Padding bên trong */
+            border: 1px solid #ddd; /* Đường viền màu xám */
+            border-radius: 4px; /* Bo tròn các góc */
+            margin-right: 10px; /* Khoảng cách giữa ô input và nút tìm kiếm */
+        }
+
+        /* Định dạng nút tìm kiếm */
+        button {
+            padding: 10px 15px; /* Padding cho nút */
+            background-color: #007BFF; /* Màu nền xanh dương */
+            color: white; /* Màu chữ trắng */
+            border: none; /* Không có đường viền */
+            border-radius: 4px; /* Bo tròn các góc */
+            cursor: pointer; /* Con trỏ chuột khi hover */
+        }
+
+        /* Hiệu ứng hover cho nút tìm kiếm */
+        button:hover {
+            background-color: #0056b3; /* Đậm hơn khi hover */
+        }
+    </style>
+</head>
+<body>
+<h1>Category List</h1>
+<!-- Corrected the 'Thêm mới' link -->
+<a th:href="@{/admin/category/add}" class="button">Thêm mới</a>
+<form th:action="@{/admin/category/search}" method="get">
+    <input type="text" name="name" placeholder="Tìm kiếm người dùng" />
+    <button type="submit">Tìm kiếm</button>
+</form>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Mô tả</th>
+        <th>Trạng thái</th>
+        <th>Thao Tác</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Thymeleaf loop to iterate through categories -->
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td th:text="${category.description}"></td>
+        <td th:text="${category.status ? 'Hoạt động' : 'Không hoạt động'}"></td>
+        <td>
+            <!-- Corrected the 'Sửa' link -->
+            <a th:href="@{/admin/category/edit/{id}(id=${category.id})}">Sửa</a> |
+            <!-- Corrected the 'Xóa' link -->
+            <a th:href="@{/admin/category/delete/{id}(id=${category.id})}">Xóa</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/admin/dashboard" class="back-link">Quay lại trang chủ</a>
+</body>
+</html>

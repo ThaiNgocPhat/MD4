@@ -1,53 +1,42 @@
 package ra.md4.service.shoppingcart;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ra.md4.dao.shoppingcart.IShoppingCartDao;
+import ra.md4.models.Order;
 import ra.md4.models.ShoppingCart;
 
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 @Service
 public class ShoppingCartServiceImpl implements IShoppingCartService{
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     private IShoppingCartDao iShoppingCartDao;
     @Override
-    public List<ShoppingCart> getAll() {
-        return iShoppingCartDao.getAll();
+    public void addItemToCart(Integer userId, Integer productId, Integer quantity) {
+        iShoppingCartDao.addItemToCart(userId, productId, quantity);
     }
 
     @Override
-    public ShoppingCart findById(Integer id) {
-        return iShoppingCartDao.findById(id);
+    public void updateItemInCart(Integer userId, Integer productId, Integer quantity) {
+        iShoppingCartDao.updateItemInCart(userId, productId, quantity);
     }
 
     @Override
-    public void save(ShoppingCart shoppingCart) {
-        iShoppingCartDao.save(shoppingCart);
+    public void removeItemFromCart(Integer userId, Integer productId) {
+        iShoppingCartDao.removeItemFromCart(userId, productId);
     }
 
     @Override
-    public void update(ShoppingCart shoppingCart) {
-        iShoppingCartDao.update(shoppingCart);
+    public ShoppingCart getCartByUserId(Integer userId) {
+        return iShoppingCartDao.getCartByUserId(userId);
     }
 
     @Override
-    public void delete(Integer id) {
-        iShoppingCartDao.delete(id);
-    }
-
-    @Override
-    public double calculateTotal(List<ShoppingCart> shoppingCarts) {
-        return iShoppingCartDao.calculateTotal(shoppingCarts);
-    }
-
-    @Override
-    public double calculateTotalAmount(List<ShoppingCart> shoppingCarts) {
-        return iShoppingCartDao.calculateTotalAmount(shoppingCarts);
-    }
-
-    @Override
-    public ShoppingCart findByUserAndProduct(Integer userId, Integer productId) {
-        return iShoppingCartDao.findByUserAndProduct(userId, productId);
+    public Order checkout(Integer userId) {
+        return iShoppingCartDao.checkout(userId);
     }
 }

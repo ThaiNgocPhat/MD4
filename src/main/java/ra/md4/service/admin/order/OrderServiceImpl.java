@@ -1,4 +1,4 @@
-package ra.md4.service.order;
+package ra.md4.service.admin.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
